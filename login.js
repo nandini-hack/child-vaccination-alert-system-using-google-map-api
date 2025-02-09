@@ -4,7 +4,7 @@ const sqlite3 = require('sqlite3').verbose();
 const path = require('path');
 
 const app = express();
-const port = 3000;
+const port = 8080;
 
 // Set up body-parser middleware
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -46,8 +46,16 @@ app.post('/login', (req, res) => {
     res.send("Login successful");
   });
 });
-
+// Endpoint to retrieve users (for verification purposes)
+app.get('/users', (req, res) => {
+    db.all("SELECT * FROM users", [], (err, rows) => {
+      if (err) {
+        return res.status(500).send("Error retrieving users");
+      }
+      res.json(rows);
+    });
+  });
 // Start the server
 app.listen(port, () => {
-  console.log(`Server running at http://localhost:${port}/`);
+  console.log(`Server running at http://127.0.0.1:${port}/`);
 });
