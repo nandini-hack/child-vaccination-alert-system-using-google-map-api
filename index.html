@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dr.Alert</title>
+<meta name="description" content="">
+<meta name="author" content="">
+
+<!-- Favicons
+    ================================================== -->
+ <link rel="manifest" href="site.webmanifest">
+ <link rel="shortcut icon" type="image/x-icon" href="img/logofinal.jpg">
+
+<!-- Bootstrap -->
+<link rel="stylesheet" type="text/css"  href="css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="fonts/font-awesome/css/font-awesome.css">
+
+<!-- Stylesheet
+    ================================================== -->
+<link rel="stylesheet" type="text/css"  href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/nivo-lightbox/nivo-lightbox.css">
+<link rel="stylesheet" type="text/css" href="css/nivo-lightbox/default.css">
+<link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Dancing+Script:400,700" rel="stylesheet">
+
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<!-- <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+Navigation
+    ==========================================-->
+<nav id="menu" class="navbar navbar-default navbar-fixed-top">
+  <div class="container"> 
+
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+      <span class="sr-only">Toggle navigation</span> 
+      <span class="icon-bar"></span> 
+      <span class="icon-bar"></span> 
+      <span class="icon-bar"></span> 
+    </button>
+    <!-- Logo Section -->
+    <a class="navbar-fixed-top" href="index.html">
+      <img src="img/logofinal.jpg" alt="Dr Alert Logo" style="height: 130px; width: auto;">
+    </a>
+    </div>
+    
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav text-center" style="list-style: none; padding: 0;">
+        <li><a class="nav-link dropdown-toggle" href="index.html" >Home</a></li>
+        <li><a class="nav-link" href="vaccine.html" class="page-scroll">Vaccine Scedule</a></li>
+        <li><a class="nav-link" href="hospital.html" class="page-scroll">Hospital</a></li>
+        <!-- <li><a href="#team" class="page-scroll">FAQ</a></li> -->
+        <!-- <li><a href="contact.html" class="page-scroll">About us</a></li> -->
+        <li><a class="nav-link" href="contact.html" class="page-scroll">Contact Us</a></li>
+      </ul>
+      <div class="d-flex flex-column navbar-right align-items-center" style="gap: 10px; margin-left: 15px;">
+        <a href="register.html.html" class="btn btn-success theme-free-btn" style="padding: 10px 20px; width: 100px;">Register</a>
+        <a href="login.html" class="btn btn-primary theme-free-btn" style="padding: 10px 20px; width: 100px;">Sign Up</a>
+      </div>
+    </div>
+    <!-- /.navbar-collapse --> 
+  </div>
+</nav>
+<!-- <script>
+  function openwin(){
+    window.open("http://127.0.0.1:5500/CVRS-main/index.html");
+  }
+  function openaboutus(){
+    window.open("http://127.0.0.1:5500/CVRS-main/vaccine.html");
+  }
+  </script> -->
+
+<!-- Header -->
+<header id="header">
+  <div class="intro">
+    <div class="overlay">
+      <div class="container">
+        <div class="row">
+          <div class="intro-text">
+            <h1>HOME PAGE</h1>
+            <!-- <p></p>
+            <a href="#about" class="btn btn-custom btn-lg page-scroll">Discover Story</a> </div> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<!-- About Section -->
+<div id="about">
+  <div class="container">
+    <div class="row">
+      <!-- <div class="col-xs-12 col-md-6 ">
+        <div class="about-img"><img src="img/about.jpg" class="img-responsive" alt=""></div>
+      </div> -->
+      <div class="col-xs-12 col-md-12">
+        <div class="about-text" style="margin-top: 30px;">
+          <h2>Child Vaccination Alert System</h2>
+          <hr>
+          <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam. Sed commodo nibh ante facilisis bibendum dolor feugiat at. Duis sed dapibus leo nec ornare diam commodo nibh.</p> -->
+          <h4>Stay on Top of Your Child's Health: </h4>
+            <p> "Personalized Vaccination Schedules and Nearby Hospitals at Your Fingertips" </p>
+        </div>
+        <div class="col-xs-20 col-md-20 ">
+        <div class="about-img" style="margin-bottom: 30px;"><img src="img/immunization-vs-vaccination-vs-vaccine-.jpg" class="img-responsive" alt=""></div>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- vaccine schedule Section -->
+<div id="vaccine schedule">
+  <div class="section-title text-center center">
+    <div class="overlay">
+      <h3>VACCINE SCHEDULE</h3>
+      <hr>
+      <p>"Stay on track with your child's health—get timely vaccine schedule alerts and reminders with Dr.Alert!"</p>
+    </div>
+  </div>
+  <section class="vaccine-schedule gradient-bg pt-150 pb-120 pt-md-95 pb-md-70 pt-xs-95 pb-xs-70">
+    <div class="container">
+      <div style="border: 2px solid #000; padding: 5%; border-radius: 8px; background-color: #ffffff; float: center; width: auto; background-image: url('img/backgroundbox.webp'); background-size: cover; background-position: center; margin-bottom: 30px;" > 
+        <div class="row">
+            <div class="col-xl-6 col-lg-12">
+                <div class="menu-section">
+                    <h5 class="menu-section-title">CHILD BIRTH VACCINATION</h5>
+                    <hr>
+                    <div class="menu-item">
+                        <div class="menu-item-name">Vaccine Name : Hepatitis B</div>
+                        <div class="menu-item-price">1st dose</div>
+                        <div class="menu-item-description"></div>
+                    </div>
+                    <!-- Additional menu items can be added here -->
+                </div>
+            </div>
+        </div>
+      </div>
+      <!-- <section class="vaccine-schedule gradient-bg pt-150 pb-120 pt-md-95 pb-md-70 pt-xs-95 pb-xs-70"> -->
+        <div class="container">
+          <div style="border: 2px solid #000000; padding: 5%; border-radius: 8px; background-color: #ffffff  ; float: center; width: auto; background-image: url('img/background.jpg'); background-size: cover; background-position: center; margin-bottom: 30px;" > 
+            <div class="row">
+                <div class="col-xl-6 col-lg-12">
+                    <div class="menu-section">
+                        <h5 class="menu-section-title">1-2 MONTHS CHILD VACCINATION</h5>
+                        <hr>
+                        <div class="menu-item">
+                            <div class="menu-item-name">Vaccine Name : Hepatitis B</div>
+                            <div class="menu-item-price">2nd dose</div>
+                            <div class="menu-item-description"></div>
+                        </div>
+                        <!-- Additional menu items can be added here -->
+                    </div>
+                </div>
+            </div>
+          </div>
+  </section>
+  <section class="vaccine-schedule gradient-bg pt-150 pb-120 pt-md-95 pb-md-70 pt-xs-95 pb-xs-70">
+    <div class="container">
+      <div style="border: 2px solid #000; padding: 5%; border-radius: 8px; background-color: #ffffff; float: center; width: auto; background-image: url('img/backgroundbox.webp'); background-size: cover; background-position: center; margin-bottom: 30px;" > 
+        <div class="row">
+            <div class="col-xl-6 col-lg-12">
+                <div class="menu-section">
+                    <h5 class="menu-section-title">2 MONTHS CHILD VACCINATION</h5>
+                    <hr>
+                    <div class="menu-item">
+                        <div class="menu-item-name">Vaccine Name : DTaP (Diphtheria, Tetanus, Pertussis)</div>
+                        <div class="menu-item-price">1st dose</div>
+                        <div class="menu-item-name">Vaccine Name : Hib (Haemophilus influenzae type b)</div>
+                        <div class="menu-item-price">1st dose</div>
+                        <div class="menu-item-name">Vaccine Name : IPV (Inactivated Polio Vaccine)</div>
+                        <div class="menu-item-price">1st dose</div>
+                        <div class="menu-item-name">Vaccine Name : PCV (Pneumococcal Conjugate Vaccine)</div>
+                        <div class="menu-item-price">1st dose</div>
+                        <div class="menu-item-name">Vaccine Name : RV (Rotavirus) </div>
+                        <div class="menu-item-price">1st dose</div>
+                        <div class="menu-item-description"></div>
+                    </div>
+                    <!-- Additional menu items can be added here -->
+                </div>
+            </div>
+        </div>
+      </div>
+      <!-- <section class="vaccine-schedule gradient-bg pt-150 pb-120 pt-md-95 pb-md-70 pt-xs-95 pb-xs-70"> -->
+        <div class="container">
+          <div style="border: 2px solid #000000; padding: 5%; border-radius: 8px; background-color: #ffffff  ; float: center; width: auto; background-image: url('img/background.jpg'); background-size: cover; background-position: center; margin-bottom: 30px;" > 
+            <div class="row">
+                <div class="col-xl-6 col-lg-12">
+                    <div class="menu-section">
+                        <h5 class="menu-section-title"> 4 MONTHS CHILD VACCINATION</h5>
+                        <hr>
+                        <div class="menu-item">
+                            <div class="menu-item-name">Vaccine Name : DTaP (Diphtheria, Tetanus, Pertussis)</div>
+                            <div class="menu-item-price">2nd dose</div>
+                            <div class="menu-item-name">Vaccine Name : Hib (Haemophilus influenzae type b)</div>
+                            <div class="menu-item-price">2nd dose</div>
+                            <div class="menu-item-name">Vaccine Name : IPV (Inactivated Polio Vaccine)</div>
+                            <div class="menu-item-price">2nd dose</div>
+                            <div class="menu-item-name">Vaccine Name : PCV (Pneumococcal Conjugate Vaccine)</div>
+                            <div class="menu-item-price">2nd dose</div>
+                            <div class="menu-item-name">Vaccine Name : RV (Rotavirus) </div>
+                            <div class="menu-item-price">2nd dose</div>
+                            <div class="menu-item-description"></div>
+                        </div>
+                        <!-- Additional menu items can be added here -->
+                    </div>
+                </div>
+            </div>
+          </div>
+  </section>
+  <section class="vaccine-schedule gradient-bg pt-150 pb-120 pt-md-95 pb-md-70 pt-xs-95 pb-xs-70">
+    <div class="container">
+      <div style="border: 2px solid #000; padding: 5%; border-radius: 8px; background-color: #ffffff; float: center; width: auto; background-image: url('img/backgroundbox.webp'); background-size: cover; background-position: center; margin-bottom: 30px;" > 
+        <div class="row">
+            <div class="col-xl-6 col-lg-12">
+                <div class="menu-section">
+                    <h5 class="menu-section-title">6 MONTHS CHILD VACCINATION</h5>
+                    <hr>
+                    <div class="menu-item">
+                      <div class="menu-item-name">Vaccine Name : DTaP (Diphtheria, Tetanus, Pertussis)</div>
+                      <div class="menu-item-price">3rd dose</div>
+                      <div class="menu-item-name">Vaccine Name : Hib (Haemophilus influenzae type b)</div>
+                      <div class="menu-item-price">3rd dose</div>
+                      <div class="menu-item-name">Vaccine Name : IPV (Inactivated Polio Vaccine)</div>
+                      <div class="menu-item-price">3rd dose</div>
+                      <div class="menu-item-name">Vaccine Name : PCV (Pneumococcal Conjugate Vaccine)</div>
+                      <div class="menu-item-price">3rd dose</div>
+                      <div class="menu-item-name">Vaccine Name : RV (Rotavirus) </div>
+                      <div class="menu-item-price">3rd dose</div>
+                      <div class="menu-item-name">Vaccine Name : Influenza </div>
+                      <div class="menu-item-price">1st dose</div>
+                        <div class="menu-item-description"></div>
+                    </div>
+                    <!-- Additional menu items can be added here -->
+                </div>
+            </div>
+        </div>
+      </div>
+      <!-- <section class="vaccine-schedule gradient-bg pt-150 pb-120 pt-md-95 pb-md-70 pt-xs-95 pb-xs-70"> -->
+        <div class="container">
+          <div style="border: 2px solid #000000; padding: 5%; border-radius: 8px; background-color: #ffffff  ; float: center; width: auto; background-image: url('img/background.jpg'); background-size: cover; background-position: center; margin-bottom: 30px;" > 
+            <div class="row">
+                <div class="col-xl-6 col-lg-12">
+                    <div class="menu-section">
+                        <h5 class="menu-section-title">12-15 MONTHS CHILD VACCINATION</h5>
+                        <hr>
+                        <div class="menu-item">
+                          <div class="menu-item-name">Vaccine Name : Hib (Haemophilus influenzae type b)</div>
+                          <div class="menu-item-price">Final dose</div>
+                          <div class="menu-item-name">Vaccine Name : PCV (Pneumococcal Conjugate Vaccine)</div>
+                          <div class="menu-item-price">Final dose</div>
+                          <div class="menu-item-name">Vaccine Name : MMR (Measles, Mumps, Rubella)</div>
+                          <div class="menu-item-price">1st dose</div>
+                          <div class="menu-item-name">Vaccine Name : Hepatitis A</div>
+                          <div class="menu-item-price">1st dose</div>
+                          <div class="menu-item-name">Vaccine Name : Varicella (Chickenpox)</div>
+                          <div class="menu-item-price">1st dose</div>
+                            <div class="menu-item-description"></div>
+                        </div>
+                        <!-- Additional menu items can be added here -->
+                    </div>
+                </div>
+            </div>
+          </div>
+  </section>
+  <section class="vaccine-schedule gradient-bg pt-150 pb-120 pt-md-95 pb-md-70 pt-xs-95 pb-xs-70">
+    <div class="container">
+      <div style="border: 2px solid #000; padding: 5%; border-radius: 8px; background-color: #ffffff; float: center; width: auto; background-image: url('img/backgroundbox.webp'); background-size: cover; background-position: center; margin-bottom: 30px;" > 
+        <div class="row">
+            <div class="col-xl-6 col-lg-12">
+                <div class="menu-section">
+                    <h5 class="menu-section-title">15-18 MONTHS CHILD VACCINATION</h5>
+                    <hr>
+                    <div class="menu-item">
+                        <div class="menu-item-name">Vaccine Name : DTaP (Diphtheria, Tetanus, Pertussis) </div>
+                        <div class="menu-item-price">4th dose</div>
+                        <div class="menu-item-description"></div>
+                    </div>
+                    <!-- Additional menu items can be added here -->
+                </div>
+            </div>
+        </div>
+      </div>
+      <!-- <section class="vaccine-schedule gradient-bg pt-150 pb-120 pt-md-95 pb-md-70 pt-xs-95 pb-xs-70"> -->
+        <div class="container">
+          <div style="border: 2px solid #000000; padding: 5%; border-radius: 8px; background-color: #ffffff  ; float: center; width: auto; background-image: url('img/background.jpg'); background-size: cover; background-position: center; margin-bottom: 30px;" > 
+            <div class="row">
+                <div class="col-xl-6 col-lg-12">
+                    <div class="menu-section">
+                        <h5 class="menu-section-title">4-6 YEARS CHILD VACCINATION</h5>
+                        <hr>
+                        <div class="menu-item">
+                          <div class="menu-item-name">Vaccine Name : DTaP (Diphtheria, Tetanus, Pertussis) </div>
+                          <div class="menu-item-price">5th dose</div>
+                          <div class="menu-item-name">Vaccine Name : IPV (Inactivated Polio Vaccine)</div>
+                          <div class="menu-item-price">4th dose</div>
+                          <div class="menu-item-name">Vaccine Name : MMR (Measles, Mumps, Rubella)</div>
+                          <div class="menu-item-price">2nd dose</div>
+                          <div class="menu-item-name">Vaccine Name : Varicella</div>
+                          <div class="menu-item-price">2nd dose</div>
+                            <div class="menu-item-description"></div>
+                        </div>
+                        <!-- Additional menu items can be added here -->
+                    </div>
+                </div>
+            </div>
+          </div>
+  </section>
+  
+  <div id="vaccine schedule">
+    <div class="section-title text-center center">
+      <div class="overlay">
+        <h3>HOSPITAL</h3>
+        <hr>
+        <p>"To suggest nearby hospitals for child vaccination."</p>
+      </div>
+    </div>
+<section>
+  <div class="text-center" style="margin-top: 20px; margin-bottom: 80px;">
+    <a href="https://www.google.com/maps/search/hospital+near+Ramtek" 
+       target="_blank" 
+       style="text-decoration: none; color: #ffffff; background-color: #000156; padding: 30px 400px; border-radius: 5px; font-size: 30px;">
+      Find Nearby Hospitals on Google Maps
+    </a>
+  </div>
+</section>
+ 
+<!-- Portfolio Section -->
+<div id="portfolio">
+  <div class="section-title text-center center">
+    <div class="overlay">
+      <h3>FREQUENTLY ASK QUESTION</h3>
+      <hr>
+      <p>To provide answers common questions about vaccination schedules, ensuring parents never miss essential immunizations for their child.</p>
+    </div>
+  </div>
+
+  <div class="faq-item" style="border: 2px solid #000000; padding: 5%; border-radius: 8px; background-color: transparent  ; float: center; width: auto; background-image: url('img/faqbg1.jpg'); background-size: cover; background-position: center; margin-bottom: 30px;" > 
+    <h5>Q: Why is vaccination important for children?</h5>
+    <p>Ans: Vaccination protects children from serious diseases and helps build immunity early in life.</p>
+  </div>
+  <div class="faq-item" style="border: 2px solid #000000; padding: 5%; border-radius: 8px; background-color: transparent  ; float: center; width: auto; background-image: url('img/faqbg.jpg'); background-size: cover; background-position: center; margin-bottom: 30px;">
+    <h5>Q: How will I know when my child needs a vaccine?</h5>
+    <p>Ans: The vaccination alert system sends timely reminders based on your child's age and vaccination schedule.</p>
+  </div>
+  <div class="faq-item" style="border: 2px solid #000000; padding: 5%; border-radius: 8px; background-color: transparent  ; float: center; width: auto; background-image: url('img/faqbg1.jpg'); background-size: cover; background-position: center; margin-bottom: 30px;">
+    <h5>Q: Are there side effects of vaccines?</h5>
+    <p>Ans: Minor side effects like fever or soreness are common but serious reactions are rare. Always consult your doctor for advice.</p>
+  </div>
+  <div class="faq-item" style="border: 2px solid #000000; padding: 5%; border-radius: 8px; background-color: transparent  ; float: center; width: auto; background-image: url('img/faqbg.jpg'); background-size: cover; background-position: center; margin-bottom: 30px;">
+    <h5>Q: Where can I find a hospital for vaccination?</h5>
+    <p>Ans: You can use the link to find nearby hospitals offering vaccination services.</p>
+  </div>
+  <div class="faq-item" style="border: 2px solid #000000; padding: 5%; border-radius: 8px; background-color: transparent  ; float: center; width: auto; background-image: url('img/faqbg1.jpg'); background-size: cover; background-position: center; margin-bottom: 30px;">
+    <h5>Q: When should my child receive their first vaccine?</h5>
+    <p>Ans: Vaccination usually starts at birth with the first dose of the hepatitis B vaccine.</p>
+  </div>
+  <div class="faq-item" style="border: 2px solid #000000; padding: 5%; border-radius: 8px; background-color: transparent  ; float: center; width: auto; background-image: url('img/faqbg.jpg'); background-size: cover; background-position: center; margin-bottom: 30px;">
+    <h5>Q: Are vaccinations safe for my child?</h5>
+    <p>Ans: Yes, vaccines are rigorously tested for safety and are vital in preventing diseases.</p>
+  </div>
+  <div class="faq-item" style="border: 2px solid #000000; padding: 5%; border-radius: 8px; background-color: transparent  ; float: center; width: auto; background-image: url('img/faqbg1.jpg'); background-size: cover; background-position: center; margin-bottom: 30px;">
+    <strong>Q: How can I track my child's vaccination schedule?</strong>
+    <p>Ans: You can set up reminders through vaccination alert systems.</p>
+  </div>
+  <!-- <div class="container">
+    <div class="row">
+      <div class="categories">
+        <ul class="cat">
+          <li>
+            <ol class="type">
+              <li><a href="#" data-filter="*" class="active">All</a></li>
+              <li><a href="#" data-filter=".breakfast">Breakfast</a></li>
+              <li><a href="#" data-filter=".lunch">Lunch</a></li>
+              <li><a href="#" data-filter=".dinner">Dinner</a></li>
+            </ol>
+          </li>
+        </ul>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="portfolio-items">
+        <div class="col-sm-6 col-md-4 col-lg-4 breakfast">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="img/portfolio/01-large.jpg" title="Dish Name" data-lightbox-gallery="gallery1">
+              <div class="hover-text">
+                <h4>Dish Name</h4>
+              </div>
+              <img src="img/portfolio/01-small.jpg" class="img-responsive" alt="Project Title"> </a> </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-4 dinner">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="img/portfolio/02-large.jpg" title="Dish Name" data-lightbox-gallery="gallery1">
+              <div class="hover-text"> -->
+                <!-- <h4>Dish Name</h4>
+              </div>
+              <img src="img/portfolio/02-small.jpg" class="img-responsive" alt="Project Title"> </a> </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-4 breakfast">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="img/portfolio/03-large.jpg" title="Dish Name" data-lightbox-gallery="gallery1">
+              <div class="hover-text">
+                <h4>Dish Name</h4>
+              </div>
+              <img src="img/portfolio/03-small.jpg" class="img-responsive" alt="Project Title"> </a> </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-4 breakfast">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="img/portfolio/04-large.jpg" title="Dish Name" data-lightbox-gallery="gallery1">
+              <div class="hover-text">
+                <h4>Dish Name</h4>
+              </div>
+              <img src="img/portfolio/04-small.jpg" class="img-responsive" alt="Project Title"> </a> </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-4 dinner">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="img/portfolio/05-large.jpg" title="Dish Name" data-lightbox-gallery="gallery1">
+              <div class="hover-text">
+                <h4>Dish Name</h4>
+              </div>
+              <img src="img/portfolio/05-small.jpg" class="img-responsive" alt="Project Title"> </a> </div>
+          </div>
+        </div> -->
+        <!-- <div class="col-sm-6 col-md-4 col-lg-4 lunch">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="img/portfolio/06-large.jpg" title="Dish Name" data-lightbox-gallery="gallery1">
+              <div class="hover-text">
+                <h4>Dish Name</h4>
+              </div>
+              <img src="img/portfolio/06-small.jpg" class="img-responsive" alt="Project Title"> </a> </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-4 lunch">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="img/portfolio/07-large.jpg" title="Dish Name" data-lightbox-gallery="gallery1">
+              <div class="hover-text">
+                <h4>Dish Name</h4>
+              </div>
+              <img src="img/portfolio/07-small.jpg" class="img-responsive" alt="Project Title"> </a> </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-4 breakfast">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="img/portfolio/08-large.jpg" title="Dish Name" data-lightbox-gallery="gallery1">
+              <div class="hover-text">
+                <h4>Dish Name</h4>
+              </div>
+              <img src="img/portfolio/08-small.jpg" class="img-responsive" alt="Project Title"> </a> </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-4 dinner">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="img/portfolio/09-large.jpg" title="Dish Name" data-lightbox-gallery="gallery1">
+              <div class="hover-text">
+                <h4>Dish Name</h4>
+              </div>
+              <img src="img/portfolio/09-small.jpg" class="img-responsive" alt="Project Title"> </a> </div>
+          </div>
+        </div> -->
+        <!-- <div class="col-sm-6 col-md-4 col-lg-4 lunch">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="img/portfolio/10-large.jpg" title="Dish Name" data-lightbox-gallery="gallery1">
+              <div class="hover-text">
+                <h4>Dish Name</h4>
+              </div>
+              <img src="img/portfolio/10-small.jpg" class="img-responsive" alt="Project Title"> </a> </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-4 lunch">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="img/portfolio/11-large.jpg" title="Dish Name" data-lightbox-gallery="gallery1">
+              <div class="hover-text">
+                <h4>Dish Name</h4>
+              </div>
+              <img src="img/portfolio/11-small.jpg" class="img-responsive" alt="Project Title"> </a> </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-4 breakfast">
+          <div class="portfolio-item">
+            <div class="hover-bg"> <a href="img/portfolio/12-large.jpg" title="Dish Name" data-lightbox-gallery="gallery1">
+              <div class="hover-text">
+                <h4>Dish Name</h4>
+              </div>
+              <img src="img/portfolio/12-small.jpg" class="img-responsive" alt="Project Title"> </a> </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+<!-- Team Section -->
+<!-- <div id="team" class="text-center">
+  <div class="overlay">
+    <div class="container">
+      <div class="col-md-10 col-md-offset-1 section-title">
+        <h2>Meet Our Chefs</h2>
+        <hr>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit duis sed dapibus leonec.</p>
+      </div>
+      <div id="row">
+        <div class="col-md-4 team">
+          <div class="thumbnail">
+            <div class="team-img"><img src="img/team/01.jpg" alt="..."></div>
+            <div class="caption">
+              <h3>Mike Doe</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 team">
+          <div class="thumbnail">
+            <div class="team-img"><img src="img/team/02.jpg" alt="..."></div>
+            <div class="caption">
+              <h3>Chris Doe</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 team">
+          <div class="thumbnail">
+            <div class="team-img"><img src="img/team/03.jpg" alt="..."></div>
+            <div class="caption">
+              <h3>Ethan Doe</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+<!-- Call Reservation Section -->
+<!-- <div id="call-reservation" class="text-center">
+  <div class="container">
+    <h2>Want to make a reservation? Call <strong>1-887-654-3210</strong></h2>
+  </div>
+</div> -->
+ <!-- Contact Section
+<div id="contact" class="text-center">
+  <div class="container">
+    <div class="section-title text-center">
+      <h2>Contact Form</h2>
+      <hr> 
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit duis sed.</p>
+    </div>
+    <div class="col-md-10 col-md-offset-1">
+      <form name="sentMessage" id="contactForm" novalidate>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <input type="text" id="name" class="form-control" placeholder="Name" required="required">
+              <p class="help-block text-danger"></p>
+            </div>
+          </div> 
+           <div class="col-md-6">
+            <div class="form-group">
+              <input type="email" id="email" class="form-control" placeholder="Email" required="required">
+              <p class="help-block text-danger"></p>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <textarea name="message" id="message" class="form-control" rows="4" placeholder="Message" required></textarea>
+          <p class="help-block text-danger"></p>
+        </div>
+        <div id="success"></div>
+        <button type="submit" class="btn btn-custom btn-lg">Send Message</button>
+      </form>
+    </div>
+  </div>
+</div>  -->
+<!--  footer area start  -->
+<div id="footer" style="background-color: #ffffff;">
+  <div class="container text-left" style="margin-top: 50px;">
+    <div class="col-md-4" style="margin-top: 20px;">
+      <h2>About Us</h2>
+      <div class="contact-item">
+        <p>We ensure timely child vaccinations with automated reminders and nearby healthcare suggestions via Google Maps, promoting better health and convenience.</p>
+        <p></p>
+      </div>
+    </div>
+    <div class="col-md-4" style="margin-top: 20px;">
+      <h2>Contact Us</h2>
+      <div class="contact-item">
+        <p>Phone: +91 9284798481</p>
+        <p>Email: dr.alert@gmail.com</p>
+        <p>Terms & Conditions</p>
+        <p>Privacy Policy</p>
+      </div>
+    </div>
+    <div class="col-md-4" style="margin-top: 20px;">
+      <h2>Quick links</h2>
+      <div class="contact-item">
+        <p>About Us</p>
+        <p>Contact</p>
+        <p>Our Services</p>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid text-center copyrights" style="margin-top: 50px;">
+    <div class="col-md-8 col-md-offset-2">
+      <div class="social">
+        <ul style="list-style: none; padding: 0;display: flex; justify-content: center; gap: 15px;">
+          <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+          <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+          <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+        </ul>
+      </div>
+      <p>Copyright@2025 Dr.Alert All rights reserved. <a href="http://www.templatewire.com" rel="nofollow"></a></p>
+    </div>
+  </div>
+</div>
+<script type="text/javascript" src="js/jquery.1.11.1.js"></script> 
+<script type="text/javascript" src="js/bootstrap.js"></script> 
+<script type="text/javascript" src="js/SmoothScroll.js"></script> 
+<script type="text/javascript" src="js/nivo-lightbox.js"></script> 
+<script type="text/javascript" src="js/jquery.isotope.js"></script> 
+<script type="text/javascript" src="js/jqBootstrapValidation.js"></script> 
+<script type="text/javascript" src="js/contact_me.js"></script> 
+<script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>
