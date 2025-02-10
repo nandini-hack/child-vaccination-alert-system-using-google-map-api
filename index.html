@@ -34,28 +34,31 @@
     background-color: #ffffff;
     padding: 0 20px;
   }
-  .navbar-left {
-    display: flex;
-    align-items: center;
-  }
   .navbar-left .logo img {
     height: 130px;
+    width: auto;
+  ;
   }
   .navbar-nav {
     display: flex;
     list-style: none;
+    gap: 20px;
     padding: 0;
     margin: 0;
   }
   .navbar-nav li {
-    margin: 0 10px;
+    display: inline;
   }
-  .navbar-nav a {
+  .navbar-nav li a {
     text-decoration: none;
     color: #000;
     font-size: 18px;
+    padding: 10px;
   }
   .navbar-right {
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
     display: flex;
     align-items: center;
     gap: 10px;
@@ -66,7 +69,7 @@
     text-align: center;
     text-decoration: none;
     color: #fff;
-    background-color: #007bff;
+    background-color: #3107ae;
     border-radius: 5px;
   }
   .navbar-right a:hover {
@@ -77,60 +80,26 @@
 
 <body>
   <nav class="navbar">
-    <div class="navbar-left">
+    <div class="left-nav d-flex align-items-center">
       <div class="logo">
         <a href="#">
           <img src="img/logofinal.jpg" alt="Dr Alert Logo" style="height: 130px; width: auto;">
         </a>
-      <ul class="navbar-nav">
-        <li><a href="#">Home</a></li>
-        <li><a href="vaccine.html">Vaccine-Schedule</a></li>
-        <li><a href="hospital.html">Hospital</a></li>
-        <li><a href="contact.html">Contact-us</a></li>
-      </ul>
+      </div>
     </div>
-      <div class="navbar-right">
+      <ul class="main-menu navbar justify-content-center" style="gap: 30px;font-size: 20px; font-family: 'Times New Roman', Times, serif;">
+        <li><a href="#">HOME</a></li>
+        <li><a href="vaccine.html">VACCINE-SCHEDULE</a></li>
+        <li><a href="hospital.html">HOSPITAL</a></li>
+        <li><a href="contact.html">CONTACT-US</a></li>
+      </ul>
+    
+      <div class="right-nav d-flex align-items-center justify-content-end">
         <button><a href="register.html" class="btn btn-primary theme-free-btn" style="padding: 10px 20px; width: 100px;">REGISTER</a></button>
         <button><a href="login.html" class="btn btn-primary theme-free-btn" style="padding: 10px 20px; width: 100px;">LOG IN</a></button>
       </div>
-    </div>
   </nav>
   
-<!-- <nav id="menu" class="navbar navbar-default navbar-fixed-top">
-  <div class="container"> 
-
-    <!-Brand and toggle get grouped for better mobile display -->
-    <!-- <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
-      <span class="sr-only">Toggle navigation</span> 
-      <span class="icon-bar"></span> 
-      <span class="icon-bar"></span> 
-      <span class="icon-bar"></span> 
-    </button> -->
-    <!-- Logo Section -->
-    <!-- <a class="navbar-fixed-top" href="index.html">
-      <img src="img/logofinal.jpg" alt="Dr Alert Logo" style="height: 130px; width: auto;">
-    </a>
-    </div> -->
-    
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <!-- <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav text-center" style="list-style: none; padding: 0;">
-        <li><a href="http://127.0.0.1:8080/index.html" >Home</a></li>
-        <li><a href="http://127.0.0.1:8080/vaccine.html">Vaccine-Scedule</a></li>
-        <li><a href="http://127.0.0.1:8080/hospital.html" >Hospital</a></li>
-        <li><a href="http://127.0.0.1:8080/contact.html" >Contact Us</a></li>
-      </ul>
-      <div class="d-flex flex-column navbar-right align-items-center" style="gap: 10px; margin-left: 15px;">
-        <form action= "http://127.0.0.1:8080/register.html" class="btn btn-success theme-free-btn" style="padding: 10px 20px; width: 100px;">Register
-          <input type="submit" value="Register" style="display: none;">
-        </form>
-        <a href="http://127.0.0.1:8080/login.html" class="btn btn-primary theme-free-btn" style="padding: 10px 20px; width: 100px;">Sign Up</a>
-      </div>
-    </div> -->
-    <!-- /.navbar-collapse --> 
-  <!-- </div>
-</nav> --> 
 </body>
 <header id="header">
   <div class="intro">

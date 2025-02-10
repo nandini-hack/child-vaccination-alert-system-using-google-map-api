@@ -33,48 +33,80 @@
     <![endif]-->
 
 </head>
+<style>
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 130px;
+    background-color: #ffffff;
+    padding: 0 20px;
+  }
+  .navbar-left .logo img {
+    height: 130px;
+    width: auto;
+  ;
+  }
+  .navbar-nav {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+  }
+  .navbar-nav li {
+    display: inline;
+  }
+  .navbar-nav li a {
+    text-decoration: none;
+    color: #000;
+    font-size: 18px;
+    padding: 10px;
+  }
+  .navbar-right {
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .navbar-right a {
+    padding: 10px 20px;
+    width: auto;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    background-color: #3107ae;
+    border-radius: 5px;
+  }
+  .navbar-right a:hover {
+    background-color: #8f00b3;
+  }
+</style>
+</head>
 
-<nav id="menu" class="navbar navbar-default navbar-fixed-top">
-  <div class="container"> 
-
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-      <span class="sr-only">Toggle navigation</span> 
-      <span class="icon-bar"></span> 
-      <span class="icon-bar"></span> 
-      <span class="icon-bar"></span> 
-    </button>
-    <!-- Logo Section -->
-    <a class="navbar-fixed-top" href="index.html">
-      <img src="img/logofinal.jpg" alt="Dr Alert Logo" style="height: 130px; width: auto;">
-    </a>
-    </div>
-    
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav text-center" style="list-style: none; padding: 0;">
-          <li><a class="nav-link dropdown-toggle" href="index.html" >Home</a></li>
-          <li><a class="nav-link" href="vaccine.html" class="page-scroll">Vaccine Schedule</a></li>
-          <li><a class="nav-link" href="hospital.html" class="page-scroll">Hospital</a></li>
-          <li><a href="#team" class="page-scroll">FAQ</a></li>
-          <li><a class="nav-link" href="contact.html" class="page-scroll">Contact Us</a></li>
-        </ul>
-      <div class="d-flex flex-column navbar-right align-items-center" style="gap: 10px; margin-left: 15px;">
-        <a href="register.html.html" class="btn btn-success theme-free-btn" style="padding: 10px 20px; width: 100px;">Register</a>
-        <a href="login.html" class="btn btn-primary theme-free-btn" style="padding: 10px 20px; width: 100px;">Sign Up</a>
-        <!-- Language Switcher -->
-        <!-- <div class="btn-group">
-          <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Language
-          </button>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="#" onclick="switchLanguage('en')">English</a>
-            <a class="dropdown-item" href="#" onclick="switchLanguage('mr')">Marathi</a>
-          </div>
-        </div> -->
+<body>
+  <nav class="navbar">
+    <div class="left-nav d-flex align-items-center">
+      <div class="logo">
+        <a href="#">
+          <img src="img/logofinal.jpg" alt="Dr Alert Logo" style="height: 130px; width: auto;">
+        </a>
       </div>
     </div>
-  </div>
-</nav>
+      <ul class="main-menu navbar justify-content-center" style="gap: 30px;font-size: 20px; font-family: 'Times New Roman', Times, serif;">
+        <li><a href="#">HOME</a></li>
+        <li><a href="vaccine.html">VACCINE-SCHEDULE</a></li>
+        <li><a href="hospital.html">HOSPITAL</a></li>
+        <li><a href="contact.html">CONTACT-US</a></li>
+      </ul>
+    
+      <div class="right-nav d-flex align-items-center justify-content-end">
+        <button><a href="register.html" class="btn btn-primary theme-free-btn" style="padding: 10px 20px; width: 100px;">REGISTER</a></button>
+        <button><a href="login.html" class="btn btn-primary theme-free-btn" style="padding: 10px 20px; width: 100px;">LOG IN</a></button>
+      </div>
+  </nav>
 
 <header id="header">
   <div class="intro">
