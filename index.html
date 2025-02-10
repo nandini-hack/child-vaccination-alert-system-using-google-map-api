@@ -60,26 +60,36 @@
     align-items: center;
     gap: 10px;
   }
-  
+  .navbar-right a {
+    padding: 10px 20px;
+    width: auto;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    background-color: #007bff;
+    border-radius: 5px;
+  }
+  .navbar-right a:hover {
+    background-color: #8f00b3;
+  }
 </style>
 </head>
 
 <body>
-  <nav class="navbar" style="height: 130px;width: auto; background-color: #ffffff;">
+  <nav class="navbar">
     <div class="navbar-left">
       <div class="logo">
         <a href="#">
           <img src="img/logofinal.jpg" alt="Dr Alert Logo" style="height: 130px; width: auto;">
         </a>
-      
-      <ul class="navbar-nav" style="list-style: none; padding: 0;">
+      <ul class="navbar-nav">
         <li><a href="#">Home</a></li>
         <li><a href="vaccine.html">Vaccine-Schedule</a></li>
         <li><a href="hospital.html">Hospital</a></li>
         <li><a href="contact.html">Contact-us</a></li>
       </ul>
     </div>
-      <div class="navbar-right" style="gap: 10px; margin-left: 15px;">
+      <div class="navbar-right">
         <button><a href="register.html" class="btn btn-primary theme-free-btn" style="padding: 10px 20px; width: 100px;">REGISTER</a></button>
         <button><a href="login.html" class="btn btn-primary theme-free-btn" style="padding: 10px 20px; width: 100px;">LOG IN</a></button>
       </div>
