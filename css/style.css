@@ -77,8 +77,6 @@ ul, ol {
 }
 ul, ol {
 	padding: 0;
-	webkit-padding: 0;
-	moz-padding: 0;
 }
 hr {
 	height: 2px;
@@ -101,7 +99,8 @@ a:focus, .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:acti
 	outline-offset: none;
 }
 /* Navigation */
-#menu {
+  
+/* #menu {
 	padding: 20px;
 	transition: all 0.8s ease;
 	overflow: hidden;
@@ -137,8 +136,8 @@ a:focus, .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:acti
 	background-color: #262626;
 	padding: 0;
 	padding: 10px 0;
-}
-.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+} */
+/* .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
 	color: #020113 !important;
 	background-color: pink;
 	overflow: hidden;
@@ -152,7 +151,7 @@ a:focus, .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:acti
 }
 .navbar-default .navbar-toggle:hover>.icon-bar {
 	background-color: #ffffff;
-}
+} */
 .section-title {
 	margin-bottom: 70px;
 }
@@ -225,7 +224,7 @@ a:focus, .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:acti
 	margin-bottom: 40px;
 }
 header .intro-text {
-	padding-top: 100px;
+	padding-top: -8px;
 	padding-bottom: 10px;
 	text-align: left;
 }
@@ -245,15 +244,15 @@ header .intro-text {
   font-size: 16px;
   border-radius: 5px;
   border: 1px solid gray;
-  background: #00fffff;
+  background: #00ffff;
 }
 .btn {
-  padding: 10px;
+  
   font-size: 15px;
   color: white;
   background: #2d019d;
   border: none;
-  border-radius: 5px;
+  
 }
 .error {
   width: 92%; 

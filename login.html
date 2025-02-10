@@ -4,18 +4,7 @@
 <title>Dr.Alert</title>
 <link rel="manifest" href="site.webmanifest">
  <link rel="shortcut icon" type="image/x-icon" href="img/logofinal.jpg">
-
-<link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' type='text/css'>
-<link rel ="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-<link rel="stylesheet" type="text/css" href="cssstyle.css">
-<script>
-function openwin(){
-	window.open("http://localhost/index.html");
-}
-function openaboutus(){
-	window.open("http://localhost/aboutus.html");
-}
-</script>	
+	
 <style>
 *{
 	box-sizing: border-box;
@@ -226,7 +215,7 @@ input:focus{
 .button:hover, .button:focus {
 	opacity: 1;
 	color: white;
-	background-color: #dc6ab2;
+	background-color: #2b2beb;
 }
 
 .button-block{
@@ -248,19 +237,8 @@ input:focus{
 		<h2><center>Child Vaccination Login</center></h2>
 	</div>
     
-	
-	<div class="topnav">
-		<!-- <a class="active" href="#home">Home</a>
-		<a href="http://localhost/vacinfo.html">Vaccine Info.</a>
-		<a href="http://localhost/aboutus.html">About Us</a> -->
-	</div>
 		
 	<div class = "form">
-	
-		<!-- <ul class="tab-group">
-			<li class="tab active"><a href="#signup">Sign Up</a></li>
-			<li class="tab"><a href="#login">Log In</a></li>
-		</ul> -->
 		
 		<div class = "tab-content">
 			<div id = "signup">
@@ -274,33 +252,60 @@ input:focus{
 				</label>
 				<input type="text" name = "username" required autocomplete="off" />
 			</div>	
-		
-			<div class = "field-wrap">
-				<label>
-					Password<span class="req">*</span>
-				</label>
-				<input type="email" name = "email" required autocomplete="off" />
-			</div>
-		</div>
+
 
 	<div class = "field-wrap">
 			<label>
-			Confirm Password<span class="req">*</span>
+			 Password<span class="req">*</span>
 			</label>
 		<input type="password" name = "password" required autocomplete="off" />
 	</div>
+
+	<div class = "field-wrap">
+		<label>
+		 Password<span class="req">*</span>
+		</label>
+	    <input type="password" name = "password" required autocomplete="off" />
+    </div>
 	
-	<a href="http://localhost/enter.html"><button type="submit" value= "insert" class="button button-block" >LOG IN</button></a>
+	<button type="submit" class="button button-block">LOG IN</button>
+            <p id="message" class="message"></p>
 	</form>
 	</div>
-		
+	<!-- <form action="http://127.0.0.1:8080/login.html" method="post"></form>	 -->
 	
-	<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3.min.js'>
-	</script>
-	<script src="js/test.js"></script>
-	
+		<script>
+			document.getElementById("loginForm").addEventListener("submit", async function(event) {
+				event.preventDefault();
+				
+				const username = document.getElementById("username").value;
+				const password = document.getElementById("password").value;
+				const message = document.getElementById("message");
+			
+				try {
+					const response = await fetch("http://127.0.0.1:8080/login.html", {
+						method: "POST",
+						headers: { "Content-Type": "application/json" },
+						body: JSON.stringify({ username, password }),
+					});
+			
+					const data = await response.json();
+					if (response.ok) {
+						localStorage.setItem("token", data.token);
+						message.textContent = "✅ You have logged in successfully!";
+						message.className = "message success";
+						setTimeout(() => window.location.href = "dashboard.html", 2000);
+					} else {
+						message.textContent = "❌ " + data.error;
+						message.className = "message error";
+					}
+				} catch (error) {
+					message.textContent = "⚠️ Server error, please try again.";
+					message.className = "message error";
+				}
+			});
+			</script>
+			
 
-
-	
 </body>
 </html>

@@ -1,61 +1,18 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const sqlite3 = require('sqlite3').verbose();
-const path = require('path');
+// database.js
+const sqlite3 = require("sqlite3").verbose();
 
-const app = express();
-const port = 8080;
-
-// Set up body-parser middleware
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
-
-// Serve static files from the "public" directory
-app.use(express.static(path.join(__dirname, 'public')));
-
-// Set up SQLite database
-const db = new sqlite3.Database(':memory:');
-
-db.serialize(() => {
-  db.run("CREATE TABLE users (id INTEGER PRIMARY KEY AUTOINCREMENT, username TEXT, email TEXT, password TEXT)");
+const db = new sqlite3.Database("./users.db", (err) => {
+    if (err) console.error(err.message);
+    else console.log("Connected to SQLite database.");
 });
 
-// Handle user registration
-app.post('/register', (req, res) => {
-  const { username, email, password } = req.body;
-  const stmt = db.prepare("INSERT INTO users (username, email, password) VALUES (?, ?, ?)");
-  stmt.run(username, email, password, (err) => {
-    if (err) {
-      return res.status(500).send("Error registering user");
-    }
-    res.send("User registered successfully");
-  });
-  stmt.finalize();
-});
+// Create users table
+db.run(`CREATE TABLE IF NOT EXISTS users (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    username TEXT UNIQUE,
+    password TEXT
+)`);
 
-// Handle user login
-app.post('/login', (req, res) => {
-  const { username, password } = req.body;
-  db.get("SELECT * FROM users WHERE username = ? AND password = ?", [username, password], (err, row) => {
-    if (err) {
-      return res.status(500).send("Error logging in");
-    }
-    if (!row) {
-      return res.status(401).send("Invalid username or password");
-    }
-    res.send("Login successful");
-  });
-});
-// Endpoint to retrieve users (for verification purposes)
-app.get('/users', (req, res) => {
-    db.all("SELECT * FROM users", [], (err, rows) => {
-      if (err) {
-        return res.status(500).send("Error retrieving users");
-      }
-      res.json(rows);
-    });
-  });
-// Start the server
-app.listen(port, () => {
-  console.log(`Server running at http://127.0.0.1:${port}/`);
-});
+module.exports = db;
+
+

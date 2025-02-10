@@ -81,3 +81,14 @@ function main() {
 
 }
 main();
+
+document.getElementById("navButton").addEventListener("click", function() {
+  console.log("Button clicked!");
+});
+
+
+document.addEventListener("click", function(event) {
+  if (event.target.matches("#navButton")) {
+      console.log("Button clicked!");
+  }
+});
