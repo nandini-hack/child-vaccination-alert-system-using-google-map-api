@@ -4,7 +4,7 @@ const sqlite3 = require('sqlite3').verbose();
 const path = require('path');
 
 const app = express();
-const port = 8081;
+const port = 8080;
 
 // Set up body-parser middleware
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -45,5 +45,5 @@ app.get('/users', (req, res) => {
 
 // Start the server
 app.listen(port, () => {
-  console.log(`Server running at http://127.0.0.1:${port}/`);
+  console.log(`Server running at http://127.0.0.1:8080/register.html`);
 });

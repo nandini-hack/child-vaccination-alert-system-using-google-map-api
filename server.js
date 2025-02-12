@@ -1,48 +1,54 @@
-// server.js
 const express = require('express');
+const mysql = require('mysql2');
 const bodyParser = require('body-parser');
-const cors = require('cors');
-const db = require('./login.js');
-const bcrypt = require("bcryptjs");
-
 
 const app = express();
-const PORT = process.env.PORT || 8080;
+const PORT = 8080;
 
-app.use(cors());
-app.use(bodyParser.urlencoded({ extended: true }));
+// Middleware
 app.use(bodyParser.json());
-app.use(express.static('login'));
+app.use(bodyParser.urlencoded({ extended: true }));
 
-const SECRET_KEY = "your_secret_key"; // Change this in production
-
-// User Registration (Run once to create an account)
-app.post("/register", async (req, res) => {
-    const { username, password } = req.body;
-    const hashedPassword = await bcrypt.hash(password, 10);
-    
-    db.run("INSERT INTO users (username, password) VALUES (?, ?)", [username, hashedPassword], (err) => {
-        if (err) return res.status(400).json({ error: "User already exists" });
-        res.json({ message: "User registered successfully" });
-    });
+// Database Connection
+const db = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',      // Change this to your MySQL username
+    password: 'Raje@2004',      // Add your MySQL password
+    database: 'dr_alert_db'
 });
 
+db.connect((err) => {
+    if (err) {
+        console.error('Database connection failed:', err);
+    } else {
+        console.log('Connected to MySQL database');
+    }
+});
+
+// ✅ POST /login Route (Fix for 404 Error)
+app.post('/login', (req, res) => {
+    const { username, password } = req.body;
+
+    if (!username || !password) {
+        return res.status(400).json({ error: 'Username and password are required' });
+    }
+
+    const sql = 'SELECT * FROM users WHERE username = ? AND password = ?';
+    db.query(sql, [username, password], (err, results) => {
+        if (err) {
+            return res.status(500).json({ error: 'Database query error' });
+        }
+        if (results.length > 0) {
+            res.json({ message: '✅ Login successful!', user: results[0] });
+        } else {
+            res.status(401).json({ error: '❌ Invalid credentials' });
+        }
+    });
+});
+app.use((req, res) => {
+    res.status(404).json({ error: "❌ Route not found" });
+});
+// Start Server
 app.listen(PORT, () => {
-    console.log(`Server is running on http://127.0.0.1:8080/login.html`);
+    console.log(`Server running on http://127.0.0.1:${PORT}`);
 });
-
-// Login route
-app.post("/login", (req, res) => {
-    const { username, password } = req.body;
-
-    db.get("SELECT * FROM users WHERE username = ?", [username], async (err, user) => {
-        if (err || !user) return res.status(400).json({ error: "Invalid username or password" });
-
-        const isValid = await bcrypt.compare(password, user.password);
-        if (!isValid) return res.status(400).json({ error: "Invalid username or password" });
-
-        const token = jwt.sign({ id: user.id }, SECRET_KEY, { expiresIn: "1h" });
-        res.json({ message: "Login successful", token });
-    });
-});
-

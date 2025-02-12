@@ -236,75 +236,49 @@ input:focus{
 		<h1><center>DR.ALERT</center></h1>
 		<h2><center>Child Vaccination Login</center></h2>
 	</div>
-    
-		
-	<div class = "form">
-		
-		<div class = "tab-content">
-			<div id = "signup">
-				<h1>Login Your Account</h1>
-		
-			<form action="/login" method="post">
-		
-			<div class = "field-wrap">
-				<label>
-					Username<span class="req">*</span>
-				</label>
-				<input type="text" name = "username" required autocomplete="off" />
-			</div>	
-
-
-	<div class = "field-wrap">
-			<label>
-			 Password<span class="req">*</span>
-			</label>
-		<input type="password" name = "password" required autocomplete="off" />
-	</div>
-
-	<div class = "field-wrap">
-		<label>
-		 Password<span class="req">*</span>
-		</label>
-	    <input type="password" name = "password" required autocomplete="off" />
-    </div>
-	
-	<button type="submit" class="button button-block">LOG IN</button>
-            <p id="message" class="message"></p>
-	</form>
-	</div>
-	<!-- <form action="http://127.0.0.1:8080/login.html" method="post"></form>	 -->
-	
-		<script>
-			document.getElementById("loginForm").addEventListener("submit", async function(event) {
-				event.preventDefault();
-				
-				const username = document.getElementById("username").value;
-				const password = document.getElementById("password").value;
-				const message = document.getElementById("message");
+    <div class="cotainer" style ="padding: 40px; max-width: 450px; margin: 150px auto; border-radius: 4px; box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3); transition: .5s ease;">
+	<div class="tab-content">
+			<h1>Login Your Account</h1>	
+			<form id="loginForm" action="http://127.0.0.1:8080/login" method="post">
+				<input type="text" id="username" name="username" required placeholder="Username" />
+				<input type="password" id="password" name="password" required placeholder="Password" />
+				<button type="submit" style="border: 0; outline: none; border-radius: 0; padding: 15px 0; font-size: 1rem; font-weight: 600; text-transform:uppercase; letter-spacing:.1em; background: #1ab188; color: #ffffff; transition: all 0.5s ease; display:block; width: 100%;">
+					Login</button>
+			</form>
+			<p id="message"></p>
 			
-				try {
-					const response = await fetch("http://127.0.0.1:8080/login.html", {
-						method: "POST",
-						headers: { "Content-Type": "application/json" },
-						body: JSON.stringify({ username, password }),
-					});
-			
-					const data = await response.json();
-					if (response.ok) {
-						localStorage.setItem("token", data.token);
-						message.textContent = "✅ You have logged in successfully!";
-						message.className = "message success";
-						setTimeout(() => window.location.href = "dashboard.html", 2000);
-					} else {
-						message.textContent = "❌ " + data.error;
-						message.className = "message error";
-					}
-				} catch (error) {
-					message.textContent = "⚠️ Server error, please try again.";
-					message.className = "message error";
-				}
-			});
-			</script>
+	</div>
+	</div>
+	
+	<script>
+	document.getElementById("loginForm").addEventListener("submit", async function (event) {
+    event.preventDefault();
+
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
+    const message = document.getElementById("message");
+
+    try {
+        const response = await fetch("http://127.0.0.1:8080/login", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ username, password }),
+        });
+
+        const data = await response.json();
+        if (response.ok) {
+            message.textContent = "✅ You have logged in successfully!";
+            setTimeout(() => window.location.href = "dashboard.html", 2000);
+        } else {
+            message.textContent = "❌ " + data.error;
+        }
+    } catch (error) {
+        message.textContent = "⚠️ Server error, please try again.";
+    }
+});
+
+	</script>
+	
 			
 
 </body>
