@@ -127,7 +127,7 @@
     </div> -->
     <div class="container">
         <h1>Child Registration Form</h1>
-        <form id="Registration Form-form">
+        <form id="registrationForm">
             <div class="form-group">
                 <label for="parent-name">Parent's Name:</label>
                 <input type="text" id="parent-name" name="parent-name" placeholder="Enter your name" required>
@@ -162,6 +162,56 @@
             <button type="submit">Register</button>
         </form>
     </div>
+    <script>
+        document.getElementById('registrationForm').addEventListener('submit', async function(event) {
+            event.preventDefault(); // Prevent form from refreshing the page
+        
+            const parentName = document.getElementById('parent-name').value;
+            const childName = document.getElementById('child-name').value;
+            const childDob = document.getElementById('child-dob').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirm-password').value;
+        
+            if (password !== confirmPassword) {
+                alert('Passwords do not match!');
+                return;
+            }
+        
+            const formData = {
+                parentName,
+                childName,
+                childDob,
+                email,
+                phone,
+                password
+            };
+        
+            try {
+                const response = await fetch('http://127.0.0.1:8080/register.html', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(formData)
+                });
+        
+                const result = await response.json();
+        
+                if (result.success) {
+                    alert('You have registered successfully!');
+                    document.getElementById('registrationForm').reset();
+                } else {
+                    alert('Registration Status: ' + result.message);
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('An error occurred. Please try again.');
+            }
+        });
+        </script>
+        
 </body>
-<form action="/register" method="POST"></form>
+</form>
 </html>

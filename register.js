@@ -1,49 +1,59 @@
 const express = require('express');
+const mysql = require('mysql');
 const bodyParser = require('body-parser');
-const sqlite3 = require('sqlite3').verbose();
-const path = require('path');
-
+const bcrypt = require('bcrypt');
+const cors = require('cors');
+const path =require('path');
 const app = express();
 const port = 8080;
 
-// Set up body-parser middleware
-app.use(bodyParser.urlencoded({ extended: true }));
+// Middleware
 app.use(bodyParser.json());
+app.use(cors()); // Enable CORS for all routes
+app.use(express.static('public')); // Serve static files from the 'public' directory
 
-// Serve static files from the "public" directory
-app.use(express.static(path.join(__dirname, 'public')));
-
-// Set up SQLite database
-const db = new sqlite3.Database('users.db'); // Use a file-based database
-
-db.serialize(() => {
-  db.run("CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY AUTOINCREMENT, parent_name TEXT, child_name TEXT, child_dob TEXT, email TEXT, phone TEXT, password TEXT)");
+// MySQL connection
+const db = mysql.createConnection({
+    host: 'localhost',
+    user: 'root', // Your MySQL username
+    password: 'Raje@2004', // Your MySQL password
+    database: 'child_registration',
 });
 
-// Handle user registration
-app.post('/register', (req, res) => {
-  const { parent_name, child_name, child_dob, email, phone, password } = req.body;
-  const stmt = db.prepare("INSERT INTO users (parent_name, child_name, child_dob, email, phone, password) VALUES (?, ?, ?, ?, ?, ?)");
-  stmt.run(parent_name, child_name, child_dob, email, phone, password, (err) => {
+db.connect((err) => {
     if (err) {
-      return res.status(500).send("Error registering user");
+        throw err;
     }
-    res.send("User registered successfully");
-  });
-  stmt.finalize();
+    console.log('MySQL connected...');
 });
 
-// Endpoint to retrieve users (for verification purposes)
-app.get('/users', (req, res) => {
-  db.all("SELECT * FROM users", [], (err, rows) => {
-    if (err) {
-      return res.status(500).send("Error retrieving users");
-    }
-    res.json(rows);
+app.get('/register.html', (req, res) => {
+    res.sendFile(path.join(__dirname, 'register.html'));
   });
+  
+// Registration endpoint
+app.post('/register.html', (req, res) => {
+    const { parentName, childName, childDob, email, phone, password } = req.body;
+
+    // Hash the password
+    bcrypt.hash(password, 10, (err, hash) => {
+        if (err) {
+            return res.status(500).json({ message: 'Error hashing password' });
+        }
+
+        // Insert user into the database
+        const user = { parent_name: parentName, child_name: childName, child_dob: childDob, email, phone, password: hash };
+        const sql = 'INSERT INTO registrations SET ?';
+        db.query(sql, user, (err, result) => {
+            if (err) {
+                return res.status(500).json({ message: 'Error registering user' });
+            }
+            res.status(201).json({ message: 'Registration successful!' });
+        });
+    });
 });
 
 // Start the server
 app.listen(port, () => {
-  console.log(`Server running at http://127.0.0.1:8080/register.html`);
+    console.log(`Server running at http://127.0.0.1:8080/register.html`);
 });
